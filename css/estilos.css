@@ -1,0 +1,876 @@
+/* ==========================================================================
+   TU MARCA — Hoja de estilos principal
+   Identidad: comparador de tecnología y electrodomésticos, rápido y confiable.
+   ========================================================================== */
+
+/* ---- 1. Tokens de diseño ---- */
+:root {
+    /* Color */
+    --navy: #0F172A;
+    --navy-soft: #1E293B;
+    --navy-50: rgba(15, 23, 42, 0.06);
+    --orange: #F97316;
+    --orange-dark: #EA580C;
+    --orange-light: #FFEDD5;
+    --cream: #FDFBF7;
+    --slate-100: #F1F5F9;
+    --slate-200: #E7ECF3;
+    --slate-300: #CBD5E1;
+    --text-muted: #64748B;
+    --green: #16A34A;
+    --green-light: #DCFCE7;
+    --white: #FFFFFF;
+
+    /* Tipografía */
+    --font-display: 'Sora', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Espaciado / forma */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --sombra: 0 8px 24px rgba(15, 23, 42, 0.08);
+    --sombra-hover: 0 16px 32px rgba(15, 23, 42, 0.14);
+    --transicion: all 0.25s ease;
+    --contenedor-max: 1180px;
+}
+
+/* ---- 2. Reset ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--cream);
+    color: var(--navy);
+    line-height: 1.65;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: var(--navy);
+    transition: var(--transicion);
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--navy);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+h2 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); }
+h3 { font-size: 1.25rem; }
+
+p { color: var(--navy-soft); }
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--orange-dark);
+    background: var(--orange-light);
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+}
+
+.container {
+    width: 92%;
+    max-width: var(--contenedor-max);
+    margin: 0 auto;
+}
+
+section {
+    padding: 72px 0;
+}
+
+/* ---- 3. Botones ---- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 14px 28px;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    transition: var(--transicion);
+}
+
+.btn-primario {
+    background: var(--orange);
+    color: var(--white);
+    box-shadow: 0 6px 18px rgba(249, 115, 22, 0.35);
+}
+
+.btn-primario:hover {
+    background: var(--orange-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(249, 115, 22, 0.4);
+}
+
+.btn-secundario {
+    background: transparent;
+    color: var(--navy);
+    border: 2px solid var(--navy);
+}
+
+.btn-secundario:hover {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.btn-afiliado {
+    background: var(--orange);
+    color: var(--white);
+    padding: 16px 32px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 1.05rem;
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-afiliado:hover {
+    background: var(--orange-dark);
+    transform: scale(1.03);
+    color: var(--white);
+}
+
+.btn-afiliado:focus-visible,
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 3px;
+}
+
+/* ---- 4. Header ---- */
+header {
+    background-color: var(--white);
+    padding: 0;
+    border-bottom: 1px solid var(--slate-200);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    position: relative;
+}
+
+.logo img {
+    height: 42px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-weight: 600;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--orange);
+}
+
+.nav-cta {
+    background: var(--navy);
+    color: var(--white) !important;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+}
+
+.nav-cta:hover {
+    background: var(--orange);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.menu-toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--navy);
+    border-radius: 2px;
+    transition: var(--transicion);
+}
+
+/* ---- 5. Breadcrumbs ---- */
+.breadcrumb {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding-top: 20px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.breadcrumb a {
+    color: var(--text-muted);
+}
+
+.breadcrumb a:hover {
+    color: var(--orange);
+}
+
+/* ---- 6. Hero ---- */
+#hero {
+    padding: 56px 0 72px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+}
+
+#hero p.lead {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin: 18px 0 28px;
+}
+
+.hero-acciones {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.hero-visual {
+    position: relative;
+    background: var(--navy);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-visual::before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    background: var(--orange);
+    opacity: 0.25;
+    border-radius: 50%;
+    filter: blur(50px);
+    top: -60px;
+    right: -60px;
+}
+
+.medidor-demo {
+    background: var(--navy-soft);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    width: 100%;
+    max-width: 320px;
+    position: relative;
+    z-index: 1;
+}
+
+.medidor-demo .marca {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--slate-300);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+}
+
+.medidor-demo h4 {
+    color: var(--white);
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+}
+
+/* Medidor de energía (rating con rayos) — elemento distintivo de marca */
+.medidor-energia {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 6px;
+}
+
+.medidor-energia .rayo {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.medidor-energia .rayo path {
+    fill: rgba(255,255,255,0.15);
+}
+
+.medidor-energia .rayo.activo path {
+    fill: var(--orange);
+}
+
+.medidor-energia.oscuro .rayo path {
+    fill: var(--slate-200);
+}
+
+.medidor-energia.oscuro .rayo.activo path {
+    fill: var(--orange);
+}
+
+.medidor-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--slate-300);
+}
+
+/* ---- 7. Barra de confianza ---- */
+.confianza {
+    background: var(--navy);
+    padding: 28px 0;
+}
+
+.confianza-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    text-align: center;
+}
+
+.confianza-item {
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.confianza-item .icono {
+    color: var(--orange);
+}
+
+/* ---- 8. Categorías / Cards ---- */
+.section-head {
+    max-width: 640px;
+    margin-bottom: 40px;
+}
+
+.section-head p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-top: 10px;
+}
+
+.grid-categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: var(--white);
+    padding: 28px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--slate-200);
+    transition: var(--transicion);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-hover);
+    border-color: var(--orange);
+}
+
+.card .icono-card {
+    width: 44px;
+    height: 44px;
+    background: var(--orange-light);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    color: var(--orange-dark);
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+}
+
+.card .card-link {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--orange-dark);
+}
+
+/* ---- 9. Metodología (proceso real de 3 pasos) ---- */
+.metodologia {
+    background: var(--slate-100);
+}
+
+.metodologia-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.paso {
+    position: relative;
+    padding-left: 0;
+}
+
+.paso .paso-num {
+    font-family: var(--font-mono);
+    color: var(--orange);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.paso h3 {
+    margin-bottom: 10px;
+}
+
+.paso p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ---- 10. Producto destacado ---- */
+.destacado {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 40px;
+    background: var(--white);
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    align-items: center;
+}
+
+.destacado-imagen {
+    background: var(--slate-100);
+    border-radius: var(--radius-md);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--slate-300);
+    overflow: hidden;
+}
+
+.destacado-tag {
+    display: inline-block;
+    background: var(--green-light);
+    color: var(--green);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+}
+
+.destacado-precio {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 18px 0 22px;
+}
+
+.precio-actual {
+    font-family: var(--font-mono);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.precio-anterior {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+/* ---- 11. Newsletter / disclaimer ---- */
+.disclaimer-box {
+    background: var(--navy);
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    text-align: center;
+    color: var(--white);
+}
+
+.disclaimer-box h2 {
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.disclaimer-box p {
+    color: var(--slate-300);
+    max-width: 560px;
+    margin: 0 auto 24px;
+}
+
+/* ---- 12. Footer ---- */
+footer {
+    background: var(--navy);
+    color: var(--slate-300);
+    margin-top: auto;
+    padding-top: 56px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 32px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-col h4 {
+    color: var(--white);
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    color: var(--slate-300);
+    font-size: 0.9rem;
+}
+
+.footer-col a:hover {
+    color: var(--orange);
+}
+
+.footer-brand img {
+    height: 36px;
+    margin-bottom: 14px;
+}
+
+.footer-brand p {
+    color: var(--slate-300);
+    font-size: 0.85rem;
+    max-width: 280px;
+}
+
+.footer-legal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    font-size: 0.82rem;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.footer-legal .aviso-afiliados {
+    color: var(--slate-300);
+    max-width: 640px;
+}
+
+/* ---- 13. Botón volver arriba ---- */
+.back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--sombra);
+    z-index: 90;
+    transition: var(--transicion);
+}
+
+.back-to-top:hover {
+    background: var(--orange);
+}
+
+/* ---- 13b. Etiqueta de tienda (Amazon / Mercado Libre) ---- */
+.tienda-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 4px 9px;
+    border-radius: 999px;
+    background: var(--slate-100);
+    color: var(--text-muted);
+}
+
+.tienda-tag--amazon {
+    background: #FFF3D6;
+    color: #8A5A00;
+}
+
+.tienda-tag--mercado-libre {
+    background: #FFF3C4;
+    color: #7A5B00;
+}
+
+/* ---- 14. Modo oscuro ---- */
+body.dark-mode {
+    background-color: var(--navy);
+    color: var(--slate-100);
+}
+
+body.dark-mode header,
+body.dark-mode .card,
+body.dark-mode .destacado,
+body.dark-mode .card-precio,
+body.dark-mode .veredicto,
+body.dark-mode .btn-filtro,
+body.dark-mode .catalogo-buscador {
+    background-color: var(--navy-soft);
+    border-color: rgba(255,255,255,0.08);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode .logo a,
+body.dark-mode .precio-actual,
+body.dark-mode .btn-filtro,
+body.dark-mode .catalogo-buscador input {
+    color: var(--white);
+}
+
+body.dark-mode p,
+body.dark-mode .nav-links a,
+body.dark-mode .veredicto ul li,
+body.dark-mode .aviso-mini,
+body.dark-mode .catalogo-contador {
+    color: var(--slate-300);
+}
+
+body.dark-mode .metodologia {
+    background-color: var(--navy-soft);
+}
+
+body.dark-mode .nav-links a:hover {
+    color: var(--orange);
+}
+
+body.dark-mode .tabla-specs tr,
+body.dark-mode article section,
+body.dark-mode .faq-item {
+    border-color: rgba(255,255,255,0.08);
+}
+
+body.dark-mode .btn-filtro.activo {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: var(--white);
+}
+
+body.dark-mode .btn-secundario {
+    color: var(--white);
+    border-color: var(--white);
+}
+
+body.dark-mode .btn-secundario:hover {
+    background: var(--white);
+    color: var(--navy);
+}
+
+body.dark-mode .estado-carga,
+body.dark-mode .estado-error {
+    color: var(--slate-300);
+}
+
+body.dark-mode .estado-error code {
+    background: var(--navy-soft);
+    color: var(--slate-100);
+}
+
+.dark-toggle {
+    background: var(--slate-100);
+    border: 1px solid var(--slate-300);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* ---- 14b. Estados de carga y error (contenido dinámico) ---- */
+.estado-carga {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 32px 0;
+    width: 100%;
+}
+
+.estado-error {
+    color: var(--text-muted);
+    text-align: center;
+    padding: 32px 0;
+    width: 100%;
+}
+
+.estado-error code {
+    background: var(--slate-100);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+/* ---- 15. Responsive ---- */
+@media (max-width: 900px) {
+    .hero-grid,
+    .destacado,
+    .confianza-grid,
+    .metodologia-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .destacado {
+        padding: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        border-bottom: 1px solid var(--slate-200);
+        box-shadow: var(--sombra);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .nav-links.abierto {
+        max-height: 320px;
+    }
+
+    .nav-links li {
+        width: 100%;
+        padding: 14px 5%;
+        border-top: 1px solid var(--slate-200);
+    }
+
+    body.dark-mode .nav-links {
+        background: var(--navy-soft);
+    }
+
+    body.dark-mode .nav-links li {
+        border-color: rgba(255,255,255,0.08);
+    }
+
+    section {
+        padding: 48px 0;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
