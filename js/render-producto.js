@@ -1,16 +1,22 @@
 /* ==========================================================================
    RENDER-PRODUCTO.JS — Arma producto.html según el ?id= de la URL
+<<<<<<< HEAD
    Además actualiza el <head> (title, description, canonical, Open Graph
    y datos estructurados JSON-LD) para que cada ficha se indexe como una
    página distinta en Google, no todas como "producto.html".
+=======
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
    ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", async () => {
     const contenedor = document.getElementById("productoContenedor");
     if (!contenedor) return;
 
+<<<<<<< HEAD
     contenedor.innerHTML = skeletonProducto();
 
+=======
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
 
@@ -33,7 +39,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
+<<<<<<< HEAD
     actualizarSEOProducto(p, id);
+=======
+    document.title = `${p.nombre} — Reseña, Specs y Precio | Tu Marca`;
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
 
     const breadcrumb = document.getElementById("breadcrumbCategoria");
     if (breadcrumb) {
@@ -103,7 +113,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                     ${generarMedidor(p.rating)}
                     <span class="precio-actual">${p.precioActual}</span>
                     ${p.precioAnterior ? `<span class="precio-anterior">${p.precioAnterior}</span>` : ""}
+<<<<<<< HEAD
                     ${generarBadgeVerificado(p, "badge-verificado--bloque")}
+=======
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
                     <div style="margin-top: 18px;">
                         <a href="${p.linkAfiliado}" target="_blank" rel="nofollow sponsored noopener" class="btn-afiliado" style="width: 100%; justify-content: center;">
                             ${datosTienda(p.tienda).icono} ${datosTienda(p.tienda).boton}
@@ -128,6 +141,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     });
 });
+<<<<<<< HEAD
 
 /* Placeholder animado mientras se descarga la planilla, en vez de dejar
    la página en blanco un instante. */
@@ -221,3 +235,5 @@ function setAtributo(selector, atributo, valor) {
     const el = document.querySelector(selector);
     if (el) el.setAttribute(atributo, valor);
 }
+=======
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22

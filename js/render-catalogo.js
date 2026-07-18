@@ -1,16 +1,24 @@
 /* ==========================================================================
    RENDER-CATALOGO.JS — Arma la grilla de productos en productos.html
+<<<<<<< HEAD
    Soporta: filtro por categoría (botones + ?cat= en la URL), búsqueda por
    texto, orden (precio/rating), filtro por rango de precio y "cargar más".
    ========================================================================== */
 
 const ITEMS_POR_PAGINA = 9;
 
+=======
+   Soporta: filtro por categoría (botones + ?cat= en la URL) y búsqueda
+   por texto libre, combinados entre sí.
+   ========================================================================== */
+
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
 document.addEventListener("DOMContentLoaded", async () => {
     const contenedor = document.getElementById("catalogoGrid");
     const filtros = document.getElementById("catalogoFiltros");
     const buscador = document.getElementById("catalogoBuscador");
     const contador = document.getElementById("catalogoContador");
+<<<<<<< HEAD
     const selectOrden = document.getElementById("catalogoOrden");
     const inputMin = document.getElementById("precioMin");
     const inputMax = document.getElementById("precioMax");
@@ -18,6 +26,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!contenedor) return;
 
     contenedor.innerHTML = skeletonCatalogo();
+=======
+    if (!contenedor) return;
+
+    contenedor.innerHTML = `<p class="estado-carga">Cargando productos…</p>`;
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
 
     const productos = await cargarProductos();
 
@@ -37,16 +50,25 @@ document.addEventListener("DOMContentLoaded", async () => {
         const clave = normalizarTexto(p.categoria);
         if (clave && !categoriasVistas.has(clave)) categoriasVistas.set(clave, p.categoria);
     });
+<<<<<<< HEAD
     const categorias = [...categoriasVistas.entries()];
+=======
+    const categorias = [...categoriasVistas.entries()]; // [ [claveNorm, etiqueta], ... ]
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
 
     const catParam = new URLSearchParams(window.location.search).get("cat") || "";
     const catParamNorm = normalizarTexto(catParam);
 
     let catActiva = categoriasVistas.has(catParamNorm) ? catParamNorm : "todas";
     let textoBusqueda = "";
+<<<<<<< HEAD
     let visibles = ITEMS_POR_PAGINA;
 
     function filtrarYOrdenar() {
+=======
+
+    function filtrar() {
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
         let lista = productos;
 
         if (catActiva !== "todas") {
@@ -62,6 +84,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             );
         }
 
+<<<<<<< HEAD
         const min = inputMin && inputMin.value !== "" ? parseFloat(inputMin.value) : null;
         const max = inputMax && inputMax.value !== "" ? parseFloat(inputMax.value) : null;
         if (min !== null || max !== null) {
@@ -91,10 +114,13 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
         }
 
+=======
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
         return lista;
     }
 
     function pintar() {
+<<<<<<< HEAD
         const listaCompleta = filtrarYOrdenar();
         const lista = listaCompleta.slice(0, visibles);
 
@@ -116,6 +142,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     function reiniciarYPintar() {
         visibles = ITEMS_POR_PAGINA;
         pintar();
+=======
+        const lista = filtrar();
+
+        contenedor.innerHTML = lista.length
+            ? lista.map(generarCardProducto).join("")
+            : `<p class="estado-error">No encontramos productos con ese criterio. Probá con otra categoría o palabra clave.</p>`;
+
+        if (contador) {
+            contador.textContent = lista.length === productos.length
+                ? `${lista.length} producto${lista.length === 1 ? "" : "s"} en total`
+                : `${lista.length} de ${productos.length} productos`;
+        }
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
     }
 
     if (filtros && categorias.length > 0) {
@@ -128,7 +167,11 @@ document.addEventListener("DOMContentLoaded", async () => {
                 filtros.querySelectorAll(".btn-filtro").forEach(b => b.classList.remove("activo"));
                 btn.classList.add("activo");
                 catActiva = btn.dataset.cat;
+<<<<<<< HEAD
                 reiniciarYPintar();
+=======
+                pintar();
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
             });
         });
     }
@@ -136,6 +179,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (buscador) {
         buscador.addEventListener("input", (e) => {
             textoBusqueda = e.target.value;
+<<<<<<< HEAD
             reiniciarYPintar();
         });
     }
@@ -147,12 +191,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (btnCargarMas) {
         btnCargarMas.addEventListener("click", () => {
             visibles += ITEMS_POR_PAGINA;
+=======
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
             pintar();
         });
     }
 
     pintar();
 });
+<<<<<<< HEAD
 
 function debounce(fn, espera) {
     let temporizador;
@@ -169,3 +216,5 @@ function skeletonCatalogo() {
         .map(() => `<div class="skeleton skeleton-card"></div>`)
         .join("");
 }
+=======
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22

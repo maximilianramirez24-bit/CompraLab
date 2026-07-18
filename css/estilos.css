@@ -9,6 +9,7 @@
     --navy: #0F172A;
     --navy-soft: #1E293B;
     --navy-50: rgba(15, 23, 42, 0.06);
+<<<<<<< HEAD
     /* Acento primario (antes naranja) — botones, links, rating, hovers.
        Se mantiene el nombre de variable "--orange" para no romper las ~17
        referencias que ya existen en este archivo; el valor es verde. */
@@ -20,16 +21,26 @@
        sobre el fondo navy del modo oscuro. El verde oscuro de arriba no se lee
        bien ahí (contraste insuficiente); este emerald sí. */
     --orange-bright: #34B279;
+=======
+    --orange: #F97316;
+    --orange-dark: #EA580C;
+    --orange-light: #FFEDD5;
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
     --cream: #FDFBF7;
     --slate-100: #F1F5F9;
     --slate-200: #E7ECF3;
     --slate-300: #CBD5E1;
     --text-muted: #64748B;
+<<<<<<< HEAD
     /* Acento secundario (antes verde) — solo se usa en destacado-tag.
        Mismo criterio: se mantiene el nombre "--green", el valor es terracota
        (5% más oscuro que el muestreado, para cumplir contraste WCAG AA). */
     --green: #A25334;
     --green-light: #FFE8D5;
+=======
+    --green: #16A34A;
+    --green-light: #DCFCE7;
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
     --white: #FFFFFF;
 
     /* Tipografía */
@@ -140,13 +151,21 @@ section {
 .btn-primario {
     background: var(--orange);
     color: var(--white);
+<<<<<<< HEAD
     box-shadow: 0 6px 18px rgba(27, 74, 53, 0.35);
+=======
+    box-shadow: 0 6px 18px rgba(249, 115, 22, 0.35);
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
 }
 
 .btn-primario:hover {
     background: var(--orange-dark);
     transform: translateY(-2px);
+<<<<<<< HEAD
     box-shadow: 0 10px 24px rgba(27, 74, 53, 0.4);
+=======
+    box-shadow: 0 10px 24px rgba(249, 115, 22, 0.4);
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
 }
 
 .btn-secundario {
@@ -167,7 +186,11 @@ section {
     border-radius: var(--radius-sm);
     font-weight: 700;
     font-size: 1.05rem;
+<<<<<<< HEAD
     box-shadow: 0 8px 20px rgba(27, 74, 53, 0.35);
+=======
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.35);
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -187,6 +210,7 @@ button:focus-visible {
     outline-offset: 3px;
 }
 
+<<<<<<< HEAD
 /* El foco por teclado dentro de zonas siempre oscuras (footer, barra de
    confianza, panel del héroe) necesita el verde claro para seguir siendo
    visible — el verde oscuro se pierde contra su propio fondo navy. */
@@ -196,6 +220,8 @@ footer :focus-visible,
     outline-color: var(--orange-bright);
 }
 
+=======
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
 /* ---- 4. Header ---- */
 header {
     background-color: var(--white);
@@ -385,7 +411,11 @@ nav {
 }
 
 .medidor-energia.oscuro .rayo.activo path {
+<<<<<<< HEAD
     fill: var(--orange-bright);
+=======
+    fill: var(--orange);
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
 }
 
 .medidor-label {
@@ -418,7 +448,11 @@ nav {
 }
 
 .confianza-item .icono {
+<<<<<<< HEAD
     color: var(--orange-bright);
+=======
+    color: var(--orange);
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
 }
 
 /* ---- 8. Categorías / Cards ---- */
@@ -624,7 +658,11 @@ footer {
 }
 
 .footer-col a:hover {
+<<<<<<< HEAD
     color: var(--orange-bright);
+=======
+    color: var(--orange);
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
 }
 
 .footer-brand img {
@@ -703,6 +741,7 @@ footer {
     color: #7A5B00;
 }
 
+<<<<<<< HEAD
 /* ---- 13c. Skeleton de carga (placeholders mientras llega la planilla) ---- */
 .skeleton {
     background: linear-gradient(90deg, var(--slate-100) 25%, var(--slate-200) 50%, var(--slate-100) 75%);
@@ -748,6 +787,8 @@ body.dark-mode .badge-verificado {
     color: #6fe3a8;
 }
 
+=======
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
 /* ---- 14. Modo oscuro ---- */
 body.dark-mode {
     background-color: var(--navy);
@@ -788,6 +829,7 @@ body.dark-mode .metodologia {
     background-color: var(--navy-soft);
 }
 
+<<<<<<< HEAD
 body.dark-mode .nav-links a:hover,
 body.dark-mode .breadcrumb a:hover,
 body.dark-mode .paso .paso-num {
@@ -798,6 +840,10 @@ body.dark-mode .card:hover,
 body.dark-mode .btn-filtro:hover,
 body.dark-mode .catalogo-buscador:focus-within {
     border-color: var(--orange-bright);
+=======
+body.dark-mode .nav-links a:hover {
+    color: var(--orange);
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
 }
 
 body.dark-mode .tabla-specs tr,

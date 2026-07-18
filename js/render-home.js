@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const contenedor = document.getElementById("destacadoContenedor");
     if (!contenedor) return;
 
+<<<<<<< HEAD
     contenedor.innerHTML = `
         <div class="skeleton" style="aspect-ratio: 4/3; border-radius: var(--radius-lg);"></div>
         <div>
@@ -15,6 +16,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             <div class="skeleton skeleton-linea" style="width: 140px; height: 40px;"></div>
         </div>`;
 
+=======
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
     const productos = await cargarProductos();
 
     if (!productos || productos.length === 0) {
@@ -36,9 +39,13 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <span class="precio-actual">${producto.precioActual}</span>
                 ${producto.precioAnterior ? `<span class="precio-anterior">${producto.precioAnterior}</span>` : ""}
             </div>
+<<<<<<< HEAD
             ${generarBadgeVerificado(producto)}
             <div style="margin-top: 16px;">
                 <a href="producto.html?id=${encodeURIComponent(producto.id)}" class="btn btn-primario">Ver ficha completa →</a>
             </div>
+=======
+            <a href="producto.html?id=${encodeURIComponent(producto.id)}" class="btn btn-primario">Ver ficha completa →</a>
+>>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
         </div>`;
 });
