@@ -1,6 +1,5 @@
 # Cómo funciona tu sitio ahora (y qué tenés que hacer)
 
-<<<<<<< HEAD
 ## 🆕 Novedades de esta versión
 
 ### Badge "Precio verificado"
@@ -53,8 +52,6 @@ celda vacía, el badge no aparece — mejor eso a mostrar una fecha que no es re
 
 ---
 
-=======
->>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
 Tu sitio ya **NO** necesita que cargues cada producto a mano en el código.
 Ahora los productos viven en una **planilla de Google Sheets**, y el sitio los
 lee solo. Agregás una fila = aparece un producto nuevo, con su propia página
@@ -174,15 +171,10 @@ con un plan gratuito. Los tres más usados:
 - **Vercel**: similar a Netlify, también gratis.
 - **GitHub Pages**: gratis, pero requiere saber un poco de Git.
 
-<<<<<<< HEAD
 **Vos ya tenés esto resuelto: tu sitio está publicado en Vercel**, en
 `https://compra-lab.vercel.app`. Para publicar una actualización nueva, es el
 mismo mecanismo que ya usaste la primera vez (subir la carpeta actualizada a
 tu proyecto de Vercel). No hace falta que cambies de plataforma ni que uses Netlify.
-=======
-**Mi recomendación: arrancá con Netlify.** Es gratis, no vence, y en 5 minutos
-tenés el sitio online para probarlo con la familia/amigos antes de gastar en dominio.
->>>>>>> b927470f233d104a89b23c4b8e0c926f01c9dc22
 
 ## 2. Dominio (el nombre, ej. `tumarca.com.ar`) — esto SÍ se paga
 
