@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tu Marca | Comparativas y Guías de Compra de Tecnología en Argentina</title>
+    <meta name="description" content="Comparamos electrodomésticos, tecnología y gaming en Argentina con reseñas honestas y precios actualizados para que elijas mejor.">
+    <link rel="canonical" href="https://compra-lab.vercel.app/">
+
+    <meta property="og:title" content="Tu Marca | Comparativas y Guías de Compra">
+    <meta property="og:description" content="Reseñas honestas y comparativas para equipar tu hogar, sin vueltas.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/logo.png">
+    <meta property="og:url" content="https://compra-lab.vercel.app/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Organization",
+        "name": "Tu Marca",
+        "url": "https://compra-lab.vercel.app/",
+        "logo": "https://compra-lab.vercel.app/img/logo.png",
+        "description": "Comparativas y guías de compra de electrodomésticos, tecnología y gaming en Argentina."
+    }
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>CompraLab</h1>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html" aria-label="Tu Marca — Inicio">
+                        <img src="img/logo.png" alt="ConsumeLab">
+                    </a>
+                </div>
+
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Categorías</a></li>
+                    <li><a href="#metodologia">Cómo elegimos</a></li>
+                    <li><a href="productos.html" class="nav-cta">Ver ofertas</a></li>
+                </ul>
+
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <button class="dark-toggle" id="darkToggle" aria-label="Cambiar modo oscuro" title="Modo oscuro">🌙</button>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section id="hero">
+            <div class="container hero-grid">
+                <div>
+                    <span class="eyebrow">⚡ Comparativas actualizadas cada semana</span>
+                    <h2>Comparamos. Elegís mejor.</h2>
+                    <p class="lead">Analizamos electrodomésticos, tecnología y gaming del mercado argentino para que encuentres el producto justo, al mejor precio, sin perder horas leyendo especificaciones.</p>
+                    <div class="hero-acciones">
+                        <a href="producto.html" class="btn btn-primario">Ver comparativas →</a>
+                        <a href="#categorias" class="btn btn-secundario">Explorar categorías</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="medidor-demo">
+                        <span class="marca">Ficha rápida</span>
+                        <h4>Heladera No Frost 350L</h4>
+                        <div class="medidor-energia oscuro" aria-label="4.5 de 5 rayos">
+                            <svg class="rayo activo" viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+                            <svg class="rayo activo" viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+                            <svg class="rayo activo" viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+                            <svg class="rayo activo" viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+                            <svg class="rayo" viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+                        </div>
+                        <span class="medidor-label">Nivel de recomendación: Alto</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Barra de confianza -->
+        <div class="confianza">
+            <div class="container confianza-grid">
+                <div class="confianza-item"><span class="icono">✓</span> Comparativas imparciales</div>
+                <div class="confianza-item"><span class="icono">↻</span> Precios revisados cada semana</div>
+                <div class="confianza-item"><span class="icono">⚡</span> Guías pensadas para decidir rápido</div>
+            </div>
+        </div>
+
+        <!-- Categorías -->
+        <section id="categorias">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Categorías</span>
+                    <h2>Elegí por dónde empezar</h2>
+                    <p>Cada categoría reúne nuestras comparativas más recientes, ordenadas de la más recomendada a la más económica.</p>
+                </div>
+
+                <div class="grid-categorias">
+                    <div class="card">
+                        <div class="icono-card">🏠</div>
+                        <h3>Electrodomésticos</h3>
+                        <p>Heladeras, lavarropas, aires acondicionados y todo lo que necesita tu cocina y tu hogar.</p>
+                        <a href="productos.html?cat=Electrodomésticos" class="card-link">Ver comparativas →</a>
+                    </div>
+                    <div class="card">
+                        <div class="icono-card">📱</div>
+                        <h3>Tecnología</h3>
+                        <p>Celulares, notebooks, auriculares y accesorios, analizados con la misma vara siempre.</p>
+                        <a href="productos.html?cat=Tecnología" class="card-link">Ver comparativas →</a>
+                    </div>
+                    <div class="card">
+                        <div class="icono-card">🎮</div>
+                        <h3>Gaming</h3>
+                        <p>Placas de video, monitores, sillas y periféricos para armar tu setup sin gastar de más.</p>
+                        <a href="productos.html?cat=Gaming" class="card-link">Ver comparativas →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metodología -->
+        <section id="metodologia" class="metodologia">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Nuestro método</span>
+                    <h2>Así elegimos qué recomendar</h2>
+                </div>
+
+                <div class="metodologia-grid">
+                    <div class="paso">
+                        <span class="paso-num">01</span>
+                        <h3>Relevamos el mercado</h3>
+                        <p>Revisamos precios y stock en las principales tiendas de Argentina antes de recomendar cualquier producto.</p>
+                    </div>
+                    <div class="paso">
+                        <span class="paso-num">02</span>
+                        <h3>Comparamos specs reales</h3>
+                        <p>Cruzamos ficha técnica, opiniones de usuarios y relación precio-calidad, no solo la marca.</p>
+                    </div>
+                    <div class="paso">
+                        <span class="paso-num">03</span>
+                        <h3>Actualizamos seguido</h3>
+                        <p>Los precios cambian rápido, así que revisamos y corregimos nuestras guías todas las semanas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Producto destacado -->
+        <section id="destacado-semana">
+            <div class="container">
+                <div class="section-head">
+                    <span class="eyebrow">Destacado de la semana</span>
+                    <h2>El más elegido por nuestros lectores</h2>
+                </div>
+
+                <div class="destacado" id="destacadoContenedor">
+                    <p class="estado-carga">Cargando destacado…</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disclaimer / newsletter -->
+        <section>
+            <div class="container">
+                <div class="disclaimer-box">
+                    <h2>Antes de que sigas...</h2>
+                    <p>Tu Marca participa en programas de afiliados. Esto significa que si comprás a través de algunos de nuestros enlaces, podemos recibir una comisión, sin ningún costo adicional para vos. Esto no influye en nuestras recomendaciones.</p>
+                    <a href="producto.html" class="btn btn-primario">Explorar comparativas</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <img src="img/logo.png" alt="Tu Marca">
+                    <p>Comparativas y guías de compra honestas para tecnología y hogar en Argentina.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Categorías</h4>
+                    <ul>
+                        <li><a href="productos.html?cat=Electrodomésticos">Electrodomésticos</a></li>
+                        <li><a href="productos.html?cat=Tecnología">Tecnología</a></li>
+                        <li><a href="productos.html?cat=Gaming">Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sitio</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="#metodologia">Cómo elegimos</a></li>
+                        <li><a href="#categorias">Categorías</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="aviso-legal.html">Aviso de afiliados</a></li>
+                        <li><a href="aviso-legal.html#privacidad">Política de privacidad</a></li>
+                        <li><a href="aviso-legal.html#terminos">Términos de uso</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-legal">
+                <span>© 2026 Tu Marca. Todos los derechos reservados.</span>
+                <span class="aviso-afiliados">Tu Marca participa en el Programa de Afiliados de Mercado Libre y, como Afiliados de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables. <a href="aviso-legal.html">Más información</a>.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="js/productos.js"></script>
+    <script src="js/render-home.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
